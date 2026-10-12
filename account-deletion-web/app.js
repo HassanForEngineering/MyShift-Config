@@ -75,9 +75,12 @@
     confirmForm.hidden = true;
     setFormsEnabled(false);
     try {
-      const response = await fetch(`${CONFIG_URL}?t=${Date.now()}`, {
-        cache: "no-store", headers: { "Accept": "application/json", "Cache-Control": "no-cache" }
-      });
+      
+const response = await fetch(`${CONFIG_URL}?t=${Date.now()}`, {
+  cache: "no-store",
+  headers: { "Accept": "application/json" }
+});
+
       if (!response.ok) throw new Error("CONFIG_HTTP");
       const loaded = await response.json();
       if (!validConfig(loaded)) throw new Error("CONFIG_INVALID");
