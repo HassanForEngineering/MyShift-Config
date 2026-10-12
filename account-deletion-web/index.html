@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="معلومات حذف حساب MyShift وحالة توفر الخدمة.">
+  <title>حذف حساب MyShift</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="MyShift الرئيسية"><span class="brand-mark">M</span><span>MyShift</span></a>
+    <span class="topbar-label">إدارة الحساب والخصوصية</span>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span> الخصوصية والتحكم في بياناتك</div>
+      <h1>طلب حذف حسابك</h1>
+      <p class="lead">نوضح لك هنا طريقة حذف حساب MyShift والبيانات المرتبطة به، ونبيّن حالة الخدمة قبل أن تبدأ.</p>
+      <div id="status" class="status" role="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span> جارٍ تحميل إعدادات الخدمة…
+      </div>
+    </section>
+    <section class="panel">
+      <div class="section-heading"><span class="step">01</span><div><h2>قبل تقديم الطلب</h2><p>حذف الحساب إجراء منفصل عن مغادرة مؤسسة أو جهة عمل.</p></div></div>
+      <ul class="checks">
+        <li>قد تفقد إمكانية تسجيل الدخول والوصول إلى ملفك الشخصي.</li>
+        <li>قد تبقى سجلات الحضور أو الطلبات الإدارية المشتركة لدى المؤسسة إذا كان الاحتفاظ بها مطلوبًا لأغراض تشغيلية أو قانونية مشروعة، مع تقليل ربطها ببياناتك الشخصية قدر الإمكان.</li>
+        <li>حذف التطبيق من الهاتف لا يحذف حسابك من السيرفر.</li>
+        <li>إعادة التسجيل بنفس رقم الهاتف لا ينبغي أن تستعيد الحساب المحذوف تلقائيًا.</li>
+      </ul>
+    </section>
+    <section class="panel">
+      <div class="section-heading"><span class="step">02</span><div><h2>طريقة حذف الحساب</h2><p>يتوفر الحذف الموثق من داخل التطبيق بعد تسجيل الدخول.</p></div></div>
+      <ol class="steps">
+        <li><span>1</span><div><strong>افتح إعدادات التطبيق</strong><p>سجّل الدخول من جهازك الموثوق، ثم افتح الحساب ← الإعدادات.</p></div></li>
+        <li><span>2</span><div><strong>راجع أثر الحذف</strong><p>يعرض التطبيق تنبيهًا بأن العضويات ستتعطل وأن سجلات المؤسسة المشتركة قد تُحتفظ بها.</p></div></li>
+        <li><span>3</span><div><strong>أكّد الحذف صراحةً</strong><p>لا يُرسل طلب الحذف إلا بعد ضغط زر التأكيد النهائي.</p></div></li>
+        <li><span>4</span><div><strong>انتظر تأكيد السيرفر</strong><p>لا تُمسح بيانات الجهاز إلا إذا أكد السيرفر نجاح العملية فعليًا.</p></div></li>
+      </ol>
+    </section>
+    <section class="panel" aria-labelledby="web-delete-heading">
+      <div class="section-heading"><span class="step">03</span><div><h2 id="web-delete-heading">طلب الحذف من هذه الصفحة</h2><p id="availability">جارٍ التحقق من حالة الخدمة…</p></div></div>
+      <p class="note">سيتم إرسال رمز تحقق إلى رقم WhatsApp المرتبط بالحساب عند تهيئة مزود التحقق على السيرفر. لا تطلب الصفحة كلمة مرور أو رمز جلسة. لن يتم الحذف إلا بعد إدخال الرمز والتأكيد النهائي.</p>
+      <div id="maintenance-message" class="maintenance-message" hidden></div>
+      <form id="request-form" class="deletion-form">
+        <label for="phone">رقم WhatsApp المسجل في الحساب</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="مثال: +2010xxxxxxxx" required maxlength="30">
+        <button id="request-otp" type="submit" class="primary-button">إرسال رمز التحقق</button>
+      </form>
+      <form id="confirm-form" class="deletion-form" hidden>
+        <label for="otp">رمز التحقق المكوّن من 6 أرقام</label>
+        <input id="otp" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required>
+        <label class="confirm-check"><input id="confirm-delete" type="checkbox" required> أؤكد أنني صاحب الحساب وأطلب حذف الحساب والبيانات الشخصية المرتبطة به نهائيًا.</label>
+        <button id="confirm-delete-button" type="submit" class="danger-button">تأكيد الحذف النهائي</button>
+      </form>
+      <div id="request-result" class="status" role="status" aria-live="polite" hidden></div>
+      <p id="support-contact" class="support-contact" hidden></p>
+      <button id="retry" type="button" class="secondary-button">إعادة فحص الحالة</button>
+    </section>
+    <footer>
+      <p>MyShift — صفحة معلومات الخصوصية وحذف الحساب</p>
+      <p class="small">هذه الصفحة لا تؤكد حذف أي حساب. حالة الطلب النهائية يجب أن تأتي من السيرفر بعد تنفيذ العملية والتحقق منها.</p>
+    </footer>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>
