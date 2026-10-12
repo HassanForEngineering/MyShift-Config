@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "myshift-account-deletion",
+  "compatibility_date": "2026-10-12",
+  "assets": {
+    "directory": "./account-deletion-web",
+    "not_found_handling": "404-page"
+  }
+}
